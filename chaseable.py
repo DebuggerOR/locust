@@ -2,7 +2,7 @@ from abc import ABC
 
 
 class Chaseable(ABC):
-    def __init__(self, x, y, v):
+    def __init__(self, x, y, v=0):
         self._x = x
         self._y = y
         self._v = v
@@ -23,5 +23,8 @@ class Chaseable(ABC):
     def advance(self, t):
         pass
 
-    def __str__(self):
-        return f'Chaseable({round(self._x,2)},{round(self._y,2)})'
+    # def __str__(self):
+    #     return f'Chaseable({round(self._x,2)},{round(self._y,2)})'
+
+    def __hash__(self):
+        return hash(str(self))

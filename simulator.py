@@ -1,3 +1,4 @@
+from dp_robot import DPRobot
 from environment import Environment
 from vertical_same_locust import VerticalSameVLocust
 from random import randint, uniform, seed
@@ -42,9 +43,8 @@ if __name__ == '__main__':
     print(f'*** running {str(chasers[0])} ***')
     simulate(chasers, chaseables)
 
-    # print('*** running DPRobot ***')
-    # seed(sd)
-    # state = State({i: 'up' for i in range(num_robots)})
-    # chasers = [DPRobot(x=i, y=4, fv=fv, r=0, state=state) for i in range(num_robots)]
-    # chaseables = [VerticalSameVLocust(x=i, y=randint(a, b), v=v) for i in range(num_locust)]
-    # simulate(chasers, chaseables)
+    seed(sd)
+    chasers = [DPRobot(x=1, y=4, fv=fv) for i in range(num_robots)]
+    chaseables = [VerticalSameVLocust(x=1, y=randint(a, b), v=v) for i in range(num_locust)]
+    print(f'*** running {str(chasers[0])} ***')
+    simulate(chasers, chaseables)
