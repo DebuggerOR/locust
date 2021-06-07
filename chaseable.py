@@ -23,8 +23,8 @@ class Chaseable(ABC):
     def advance(self, t):
         pass
 
-    # def __str__(self):
-    #     return f'Chaseable({round(self._x,2)},{round(self._y,2)})'
+    def __str__(self):
+        return f'Chaseable({round(self._x,2)},{round(self._y,2)})'
 
     def __hash__(self):
         return hash(str(self))

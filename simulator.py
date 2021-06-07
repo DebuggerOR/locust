@@ -23,7 +23,7 @@ if __name__ == '__main__':
     a, b = 0, 10
     sd = randint(0,100)
     num_robots = 1
-    num_locust = 10
+    num_locust = 5
 
     seed(sd)
     chasers = [GreedyUpRobot(x=1, y=4, fv=fv) for i in range(num_robots)]
@@ -43,8 +43,8 @@ if __name__ == '__main__':
     print(f'*** running {str(chasers[0])} ***')
     simulate(chasers, chaseables)
 
-    seed(sd)
-    chasers = [DPRobot(x=1, y=4, fv=fv) for i in range(num_robots)]
-    chaseables = [VerticalSameVLocust(x=1, y=randint(a, b), v=v) for i in range(num_locust)]
-    print(f'*** running {str(chasers[0])} ***')
-    simulate(chasers, chaseables)
+    # seed(sd)
+    # chasers = [DPRobot(x=1, y=4, fv=fv) for i in range(num_robots)]
+    # chaseables = [VerticalSameVLocust(x=1, y=randint(a, b), v=v) for i in range(num_locust)]
+    # print(f'*** running {str(chasers[0])} ***')
+    # simulate(chasers, chaseables)
