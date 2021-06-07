@@ -2,12 +2,11 @@ from abc import ABC
 
 
 class Chaser(ABC):
-    def __init__(self, x, y, fv, r, state=None):
+    def __init__(self, x, y, fv, r=0):
         self._x = x
         self._y = y
         self._fv = fv
         self._r = r
-        self._state = state
 
     @property
     def x(self):
@@ -34,14 +33,3 @@ class Chaser(ABC):
     def __str__(self):
         return f'Chaser({self._x},{self._y})'
 
-
-class State:
-    def __init__(self, state):
-        self._state = state
-
-    @property
-    def state(self):
-        return self._state
-
-    def set_state(self, state):
-        self._state = state
